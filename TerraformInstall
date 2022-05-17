@@ -79,8 +79,8 @@ output "s3_bucket_region" {
 }
 
 
-9. terraform plan
+9. terraform init
 
-10. terraform apply
+10. terraform plan
 
-11. terraform init
+11. terraform apply
