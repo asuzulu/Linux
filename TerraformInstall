@@ -1,0 +1,56 @@
+1. Download Terraform:
+
+wget https://releases.hashicorp.com/terraform/1.1.4/terraform_1.1.4_linux_amd64.zip
+
+2. Unzip:
+unzip terraform_1.1.4_linux_amd64.zip
+
+3. Set Terraform Path:
+
+echo $"export PATH=\$PATH:$(pwd)" >> ~/.bash_profile
+
+4. source ~/.bash_profile
+
+5. mkdir terraform-work
+
+6. cd terraform-work
+
+7. vi ec2.tf
+
+provider "aws" {
+  access_key = "AKIA3BLJ54BJWVCB4DEQ"
+  secret_key = "fYXEVehWx0cJO31oJpq5mHqzIVw/qcLJAyLFG0Vw"
+  region     = "us-east-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-2757f631"
+  instance_type = "t2.micro"
+}
+resource "aws_s3_bucket" "my-s3-bucket" {
+  bucket_prefix = var.bucket_prefix
+
+   versioning {
+    enabled = var.versioning
+  }
+
+  tags = var.tags
+}
+
+
+8. vi output.tf
+
+output "s3_bucket_name" {
+  value = aws_s3_bucket.my-s3-bucket.id
+}
+
+output "s3_bucket_region" {
+    value = aws_s3_bucket.my-s3-bucket.region
+}
+
+
+9. terraform plan
+
+10. terraform apply
+
+11. terraform init
