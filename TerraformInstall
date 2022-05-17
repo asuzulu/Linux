@@ -19,7 +19,7 @@ echo $"export PATH=\$PATH:$(pwd)" >> ~/.bash_profile
 
 provider "aws" {
   access_key = "<insert access key>"
-  secret_key = "fYXEVehWx0cJO31oJpq5mHqzIVw/qcLJAyLFG0Vw"
+  secret_key = "<insert secret key>"
   region     = "us-east-1"
 }
 
