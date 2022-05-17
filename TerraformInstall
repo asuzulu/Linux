@@ -39,7 +39,7 @@ resource "aws_s3_bucket" "my-s3-bucket" {
 
 
 
-vi variable.tf
+8. vi variable.tf
 
 variable "aws_region" {
   description = "The AWS region to use to create resources."
@@ -68,7 +68,7 @@ variable "versioning" {
 }
 
 
-8. vi output.tf
+9. vi output.tf
 
 output "s3_bucket_name" {
   value = aws_s3_bucket.my-s3-bucket.id
@@ -79,8 +79,8 @@ output "s3_bucket_region" {
 }
 
 
-9. terraform init
+10. terraform init
 
-10. terraform plan
+11. terraform plan
 
-11. terraform apply
+12. terraform apply
